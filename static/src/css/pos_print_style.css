@@ -1,0 +1,14 @@
+.invoice_text{
+    font-weight: bold;
+}
+.company_name{
+    font-weight: bold;
+}
+.header_bottom_line{
+    border-bottom: 1px solid #000;
+    border-top: 1px dashed #000;
+}
+.header_inv_party{
+    font-weight: bold;
+    font-size: 12px;
+}

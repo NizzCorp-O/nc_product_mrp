@@ -1,0 +1,45 @@
+.footer_list{
+    border-bottom: 1px dashed #000;
+}
+.footer_list li{
+    list-style-type:none;
+    font-size: 9px;
+}
+.tearms_conditions_title{
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: underline;
+}
+.totoal_mrp{
+    font-weight: bold;
+    font-size: 12px;
+}
+.thankyou{
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+}
+.total_container{
+    border-bottom: 1px solid #000;
+}
+.you_saved{
+    font-weight: bold;
+    font-size: 16px;
+}
+.you_saved_container{
+    border-top: 1px solid #000;
+    border-bottom: 1px dashed #000;
+    align-items: center;
+} 
+.date{
+    font-size: 10px;
+}
+.barcode_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.total{
+    font-weight: bold;
+    font-size: 20px;
+}

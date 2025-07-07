@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="point_of_sale.ActionpadWidget" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('pay-order-button')]" position="replace">
+            <button class="pay pay-order-button button btn btn-primary btn-lg py-3 d-flex align-items-center justify-content-center flex-fill"
+                    t-on-click="props.actionToTrigger">
+                <span t-esc="props.actionName"/>
+                <span t-if="formattedTotal()"> (₹<t t-esc="formattedTotal()"/>)</span>
+            </button>
+        </xpath>
+    </t>
+</templates>

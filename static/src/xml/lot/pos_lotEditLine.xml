@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="point_of_sale.EditListInput" t-inherit-mode="extension">
+        <!-- Modify the options dropdown div -->
+        <xpath expr="//div[hasclass('options-dropdown')]" position="replace">
+            <link rel="stylesheet" href="/nc_product_mrp/static/src/css/pos_lotEditLine.css"/>
+            <div class="options-dropdown" t-ref="options-dropdown" t-if="props.shouldShowOptions and !state.hideOptions">
+                <span t-if="displayedOptions.length === 0" class="no-match">No existing serial/lot number matching...</span>
+                <t t-foreach="displayedOptions" t-as="option" t-key="option.name">
+                    <div class="option" t-att-class="{'selected': option === state.selectedOptionValue}" t-on-click="() => this.onSelectOption(option)">
+                        <span t-esc="option.name" />-<span t-esc="option.product_qty" class="test"/>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_pos_simple_form" model="ir.ui.view">
+        <field name="name">account.payment.form.pos</field>
+        <field name="model">account.payment</field>
+        <field name="arch" type="xml">
+            <form string="POS Payment">
+                <group>
+                    <field name="payment_type" widget="radio" options="{'horizontal': true}"/>
+                    <field name="partner_id" required="1" onchange="onchange_partner_id"/>
+                    <field name="amount" required="1" help="Payment amount must be greater than zero"/>
+                    <field name="journal_id" required="1"/>
+                    <field name="partner_balance" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+          <xpath expr="//OrderlineNoteButton" position="replace">
+            <div class="text-center border btn btn-lg ">₹.0</div>
+          </xpath>
+        <xpath expr="//div[hasclass('control-buttons')]" position="inside">
+            <button class="button  btn btn-lg btn-danger w-100 py-3" t-on-click="onClearLines">
+                <i t-attf-class="fa fa-trash me-1" />Clear All
+            </button>
+        </xpath>
+    </t>
+</templates>

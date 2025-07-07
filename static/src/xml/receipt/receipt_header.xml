@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates  xml:space="preserve">
+	<t t-inherit="point_of_sale.ReceiptHeader" t-inherit-mode="extension">
+		<xpath expr="//img[hasclass('pos-receipt-logo')]" position="replace">
+		</xpath>
+		 <xpath expr="//div[hasclass('pos-receipt-contact')]" position="replace">
+			<link rel="stylesheet" href="/nc_product_mrp/static/src/css/pos_print_style.css"/>
+            <span t-if="props.data.company.name" t-esc="props.data.company.name" class="text-uppercase company_name"/>
+			<span t-esc="Address" class=""/>
+			<div t-if="props.data.header" style="white-space:pre-line" t-esc="props.data.header" />
+			<div class="invoice_text w-100 text-center">INVOICE</div>
+			<div class="d-flex flex-column w-100 header_bottom_line">
+				<div><span class="header_inv_party">InvNo:</span><t t-esc="props.data.trackingNumber" class="text-wrap"/></div>
+				<div><span class="header_inv_party">Party:</span><t t-esc="props.data.partner_name" class="text-wrap"/></div>
+			</div>
+        </xpath>
+	</t>
+</templates>

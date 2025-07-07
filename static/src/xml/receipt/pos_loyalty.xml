@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates  xml:space="preserve">
+	<t t-inherit="pos_coupon.OrderReceipt" t-inherit-mode="extension">
+		<xpath expr="//t[t-if='props.data.partner']" position="replace">
+		</xpath>
+	</t>
+</templates>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- First, extend the stock move line operation tree view to add MRP fields -->
+    <record id="view_stock_move_line_operation_tree_inherit_mrp" model="ir.ui.view">
+        <field name="name">stock.move.line.operation.tree.inherit.mrp</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+        <field name="arch" type="xml">
+            <field name="lot_name" position="after">
+                <field name="sales_price" required="1"/>
+                <field name="mrp" required="1"/>
+            </field>
+        </field>
+    </record>
+</odoo>

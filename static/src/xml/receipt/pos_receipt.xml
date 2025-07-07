@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates  xml:space="preserve">
+	<t t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension">
+		<xpath expr="(//div[hasclass('pos-receipt-order-data')])[last()]" position="replace">
+		  <link rel="stylesheet" href="/nc_product_mrp/static/src/css/pos_print_footer.css"/>
+			<div class="d-flex justify-content-between  you_saved_container">
+				<span class="you_saved">You Saved</span><span t-esc="props.data.you_saved" class="you_saved"/>
+			</div>
+			<div class="d-flex justify-content-between total_container">
+				<span class="totoal_mrp">Total MRP</span><t t-esc="props.data.total_mrp"/>
+			</div>
+			<div class="d-flex justify-content-between">
+				<span class="date">Date</span>
+				<span id="order-date" t-esc="props.data.date" class="date"/>
+			</div>
+			<div class="d-flex justify-content-between">
+				<span class="date">Served By</span>
+				<span id="order-date" t-esc="props.data.cashier" class="date"/>
+			</div>
+			<div class="d-flex justify-content-between">
+				<span class="date">Counter</span>
+				<span id="order-date" t-esc="props.data.counter" class="date"/>
+			</div>
+			<div class="barcode_container">
+				<BarcodeGenerator code="props.data.headerData.trackingNumber"/>
+			</div>
+			<span class="tearms_conditions_title">Tearms &amp; Conditions</span>
+			<ol class="footer_list">
+				<li>*No product will be returned/replaced after 7 days from the date of purchase</li>
+				<li>*No Product will be replaced without bill</li>
+			</ol>
+			<div class="thankyou">***Thank You for shopping with us***</div>
+		</xpath>
+		<xpath expr="//div[hasclass('receipt-total')]" position="replace">
+			<div class="pos-receipt-amount receipt-total">
+				<span class="total" t-out="props.data.label_total"></span>
+				<span t-esc="props.formatCurrency(taxTotals.order_sign * taxTotals.order_total)" class="pos-receipt-right-align total"/>
+			</div>
+		</xpath>
+	</t>
+</templates>
